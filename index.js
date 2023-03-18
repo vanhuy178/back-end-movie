@@ -7,6 +7,8 @@ import "dotenv/config";
 import routes from "./src/routes/index.js";
 
 const app = express();
+const MONGODB_URL = "mongodb+srv://nguyenvanhuy178_v1:1782002vanhuy@cluster0.pjjlkhl.mongodb.net/local_database_movies?retryWrites=true&w=majority"
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true)
   next()
@@ -24,7 +26,7 @@ const port = process.env.PORT || 5000;
 
 const server = http.createServer(app);
 
-mongoose.connect(process.env.MONGODB_URL).then(() => {
+mongoose.connect(process.env.MONGODB_URL || MONGODB_URL).then(() => {
   console.log("Mongodb connected ok");
   server.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
