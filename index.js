@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(cors(
-  { origin: "https://64162f6265f550250d2041b0--admirable-daifuku-f5bcfc.netlify.app/" }
+  { origin: "https://admirable-daifuku-f5bcfc.netlify.app/" }
 ));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
