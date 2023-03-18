@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(cors(
-  { origin: "http://localhost:3000" }
+  { origin: "https://64162f6265f550250d2041b0--admirable-daifuku-f5bcfc.netlify.app/" }
 ));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
