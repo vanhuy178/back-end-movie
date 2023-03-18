@@ -11,6 +11,7 @@ const MONGODB_URL = "mongodb+srv://nguyenvanhuy178_v1:1782002vanhuy@cluster0.pjj
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true)
+  res.header("Access-Control-Allow-Origin", '*')
   next()
 })
 app.use(cors(
