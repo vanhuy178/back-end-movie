@@ -14,7 +14,11 @@ app.use((req, res, next) => {
   next()
 })
 app.use(cors(
-  { origin: "https://admirable-daifuku-f5bcfc.netlify.app/" }
+  {
+    origin: '*',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+  }
 ));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
