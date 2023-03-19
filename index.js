@@ -10,14 +10,14 @@ const app = express();
 const MONGODB_URL = "mongodb+srv://nguyenvanhuy178_v1:1782002vanhuy@cluster0.pjjlkhl.mongodb.net/local_database_movies?retryWrites=true&w=majority"
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", true)
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Origin', req.header('origin'));
   next()
 })
 app.use(cors(
   {
-    origin: '*',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
+    credentials: true,
+    origin: true,
   }
 ));
 app.use(express.json());
